@@ -1,0 +1,17 @@
+.page {
+    background: gray;
+    border: 1px solid black;
+    
+    .title {
+        color: red;
+        font-size: 4rem;
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        min-height: 80vh;
+        
+        span {
+            color: green;
+        }
+    }
+}

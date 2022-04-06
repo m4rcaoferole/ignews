@@ -12,7 +12,7 @@ export const SubscribeButton = ({ priceId }: SubscribeButtonProps) => {
 
   const handleSubscribe = async () => {
     if (!session) {
-      signIn()
+      signIn('github')
       return;
     }
 

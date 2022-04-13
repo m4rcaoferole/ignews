@@ -1,0 +1,18 @@
+{
+  "_cts": {
+    "posts": {
+      "Content": {
+        "config": {
+          "patternType": "PARAGRAPH",
+          "blocks": 1
+        }
+      },
+      "Title": {
+        "config": {
+          "patternType": "HEADING",
+          "blocks": 1
+        }
+      }
+    }
+  }
+}

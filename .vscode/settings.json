@@ -1,2 +1,5 @@
 {
+  "editor.formatOnSave": true,
+  "editor.fontFamily": "'Fira Code', 'Courier New', monospace",
+  "editor.fontLigatures": true,
 }

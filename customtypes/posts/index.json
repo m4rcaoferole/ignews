@@ -12,7 +12,7 @@
           "placeholder": ""
         }
       },
-      "Title": {
+      "title": {
         "type": "StructuredText",
         "config": {
           "label": "Title",
@@ -21,7 +21,7 @@
           "single": "heading1"
         }
       },
-      "Content": {
+      "content": {
         "type": "StructuredText",
         "config": {
           "label": "Content",

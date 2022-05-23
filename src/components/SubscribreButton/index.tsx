@@ -34,7 +34,7 @@ export const SubscribeButton = ({ priceId }: SubscribeButtonProps) => {
     <button
       className={styles.subscribeButton}
       type="button"
-      onClick={() => handleSubscribe()}
+      onClick={handleSubscribe}
     >
       Subscribe now
     </button>

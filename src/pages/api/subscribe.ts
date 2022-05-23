@@ -1,3 +1,4 @@
+/* eslint-disable import/no-anonymous-default-export */
 import { NextApiRequest, NextApiResponse } from "next"
 import { query as q } from 'faunadb'
 import { getSession } from 'next-auth/react'

@@ -1,5 +1,30 @@
 {
-  "editor.formatOnSave": true,
-  "editor.fontFamily": "'Fira Code', 'Courier New', monospace",
-  "editor.fontLigatures": true,
+  "workbench.colorTheme": "Dracula",
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.productIconTheme" : "fluent-icons",
+
+  "tabnine.experimentalAutoImports": true,
+  "breadcrumbs.enabled" : true,
+
+  "[prisma]": {
+    "editor.formatOnSave": true,
+  },
+
+  "editor.lineHeight" : 26,
+  "editor.fontFamily" : "JetBrains Mono",
+  "editor.fontLigatures" : true,
+  "editor.tabSize" : 16,
+  "terminal.integrated.fontSize": 14,
+  "git.confirmSync": false,
+  "editor.inlineSuggest.enabled": true,
+  "explorer.compactFolders": false,
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "liveServer.settings.donotShowInfoMsg": true,
+  "editor.accessibilityPageSize": 16,
+  "editor.fastScrollSensitivity": 4,
+  "editor.cursorBlinking": "expand",
+  "editor.minimap.scale": 2,
+  "editor.minimap.enabled": false,
 }

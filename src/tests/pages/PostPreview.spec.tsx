@@ -34,10 +34,13 @@ describe("Post preview page", () => {
     const useRouterMocked =  mocked(useRouter)
     const pushMock = jest.fn()
     
-    useSessionMocked.mockReturnValueOnce([
-      { activeSubscription: 'fake-active-subscription' },
-      false
-    ] as any)
+    useSessionMocked.mockReturnValueOnce({
+      data: {
+        activeSubscription: 'fake-active-subscription',
+        expires: null,
+      },
+      status: 'authenticated'
+    } as any)
 
     useRouterMocked.mockReturnValueOnce({
       push: pushMock,
@@ -48,43 +51,38 @@ describe("Post preview page", () => {
     expect(pushMock).toHaveBeenCalledWith('/posts/my-new-post')    
   });
 
-  // it('loads initial data', async () => {
-  //   const getSessionMocked = mocked(getSession)
-  //   const getPrismicClientMocked = mocked(getPrismicClient)
+  it('loads initial data', async () => {
+    const getPrismicClientMocked = mocked(getPrismicClient)
     
-  //   getPrismicClientMocked.mockReturnValueOnce({
-  //     getByID: jest.fn().mockResolvedValueOnce({
-  //       data: {
-  //         Title: [
-  //           { type: 'heading', text: 'My new post'}
-  //         ],
-  //         Content: [
-  //           { type: 'paragraph',  text: 'Post content'}
-  //         ],
-  //       },
-  //       last_publication_date: '10-20-2022'
-  //     })
-  //   } as any);
+    getPrismicClientMocked.mockReturnValueOnce({
+      getByUID: jest.fn().mockResolvedValueOnce({
+        data: {
+          Title: [
+            { type: 'heading', text: 'My new post'}
+          ],
+          Content: [
+            { type: 'paragraph',  text: 'Post content'}
+          ],
+        },
+        last_publication_date: '10-20-2022'
+      })
+    } as any);
 
-  //   getSessionMocked.mockResolvedValueOnce({
-  //     activeSubscriotion: 'fake-active-subscription'
-  //   } as any)
+    const response = await getStaticProps({
+      params: { slug: 'my-new-post' }
+    } as any);
 
-  //   const response = await getServerSideProps({
-  //     params: { slug: 'my-new-post' }
-  //   } as any);
-
-  //   expect(response).toEqual(
-  //     expect.objectContaining({
-  //       props: {
-  //         post: {
-  //           slug: 'my-new-post',
-  //           title: 'My new post',
-  //           content: '<p>Post content</p>',
-  //           updatedAt: '20 de outubro de 2022',
-  //         }
-  //       }
-  //     })
-  //   );
-  // })
+    expect(response).toEqual(
+      expect.objectContaining({
+        props: {
+          post: {
+            slug: 'my-new-post',
+            title: 'My new post',
+            content: '<p>Post content</p>',
+            updatedAt: '20 de outubro de 2022',
+          }
+        }
+      })
+    );
+  })
 });

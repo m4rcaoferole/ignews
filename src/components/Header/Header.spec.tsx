@@ -25,7 +25,7 @@ describe('Header component', () => {
       <Header />
     )
 
-    screen.logTestingPlaygroundURL()
+    // screen.logTestingPlaygroundURL()
   
     expect(screen.getByText('Home')).toBeInTheDocument();
     expect(screen.getByText('Posts')).toBeInTheDocument();

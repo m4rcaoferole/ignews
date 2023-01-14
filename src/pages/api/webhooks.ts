@@ -47,6 +47,8 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     const { type } = event;
 
     if (relevantEvent.has(type)) {
+      console.log("Eventoooo", event)
+
       try {
         switch (type) {
           case "customer.subscription.updated":
@@ -77,6 +79,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       } catch (err) {
         return res.json({ error: "Webhook handler failed." });
       }
+
     }
 
     res.json({ received: true });
